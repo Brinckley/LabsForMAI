@@ -1,0 +1,23 @@
+#!/bin/bash
+#префикс
+pref=$1
+# размеры
+from=$2
+to=$3
+
+#перебор
+find . -iname "$pref*" | while read file2;
+do
+	FILENAME=$file2
+    FILESIZE=$(stat -c%s "/home/alex/factorial/$FILENAME")
+
+	if [[ FILESIZE -lt to && FILESIZE -gt from ]]
+		then
+			echo $FILENAME
+			echo $FILESIZE
+			rm "/home/alex/factorial/$FILENAME"
+			
+			echo DELETED
+	fi
+
+done
