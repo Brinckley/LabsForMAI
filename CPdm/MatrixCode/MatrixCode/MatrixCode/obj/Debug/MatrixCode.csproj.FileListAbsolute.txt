@@ -1,0 +1,10 @@
+D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\bin\Debug\MatrixCode.exe.config
+D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\bin\Debug\MatrixCode.exe
+D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\bin\Debug\MatrixCode.pdb
+D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.csprojAssemblyReference.cache
+D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.Form1.resources
+D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.Properties.Resources.resources
+D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.csproj.GenerateResource.cache
+D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.csproj.CoreCompileInputs.cache
+D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.exe
+D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.pdb
