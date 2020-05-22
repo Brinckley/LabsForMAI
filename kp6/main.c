@@ -90,9 +90,7 @@ int main()
     if (choice == 1) {
       printf("\n");
       input(st);
-      printf("FUCK!\n");
       insert(st);
-      printf("FUCK!\n");
     }
     if (choice == 2) {
       printf("\n");

@@ -10,21 +10,20 @@ typedef struct {
 #ifndef _Deque_h_
 #define _Deque_h_
 typedef struct {
-    data_type data[SIZE]; //массив данных
-    int last; //указатель на конец
+    data_type data[SIZE];
+    int last;
 } Deque;
 #endif
 
 #ifndef DEQUEUE_H
 #define DEQUEUE_H
-void deque_create(Deque *);//
+void deque_create(Deque *);
 int deque_empty(Deque *);
 int deque_size(Deque *);
-void deque_push_front(Deque *);//
-void deque_push_back(Deque *);//
-void deque_pop_front(Deque *);//
-void deque_pop_back(Deque *);//
-void deque_print(Deque *);//
-void deque_sort_bubble(Deque *);//
-
+void deque_push_front(Deque *, int);
+void deque_push_back(Deque *, int);
+void deque_pop_front(Deque *);
+void deque_pop_back(Deque *);
+void deque_print(Deque *);
+void deque_sort_bubble(Deque *);
 #endif

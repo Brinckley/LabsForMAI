@@ -15,17 +15,23 @@ int main() {
     printf("6. Сортриовка дека пузырьком\n");
     printf("7. Выход\n");
     int flag = 0;
+    int value;
+    
     while (flag != 7)
     {
         printf("Выбор функции:\n");
         scanf("%d", &flag);
         switch (flag) {
         case 1:
-            deque_push_front(&deq);
+            printf("Введите число: ");
+            scanf("%d", &value);
+            deque_push_front(deq, value);
             printf("\n");
             break;
         case 2:
-            deque_push_back(&deq);
+            printf("Введите число: ");
+            scanf("%d", &value);
+            deque_push_back(deq, value);
             break;
         case 3:
             deque_pop_front(&deq);
