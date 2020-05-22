@@ -8,3 +8,13 @@ D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.csproj.Gene
 D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.csproj.CoreCompileInputs.cache
 D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.exe
 D:\Projects C#\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.pdb
+D:\github\LabsForMAI\CPdm\MatrixCode\MatrixCode\MatrixCode\bin\Debug\MatrixCode.exe.config
+D:\github\LabsForMAI\CPdm\MatrixCode\MatrixCode\MatrixCode\bin\Debug\MatrixCode.exe
+D:\github\LabsForMAI\CPdm\MatrixCode\MatrixCode\MatrixCode\bin\Debug\MatrixCode.pdb
+D:\github\LabsForMAI\CPdm\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.csprojAssemblyReference.cache
+D:\github\LabsForMAI\CPdm\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.Form1.resources
+D:\github\LabsForMAI\CPdm\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.Properties.Resources.resources
+D:\github\LabsForMAI\CPdm\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.csproj.GenerateResource.cache
+D:\github\LabsForMAI\CPdm\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.csproj.CoreCompileInputs.cache
+D:\github\LabsForMAI\CPdm\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.exe
+D:\github\LabsForMAI\CPdm\MatrixCode\MatrixCode\MatrixCode\obj\Debug\MatrixCode.pdb

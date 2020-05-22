@@ -14,6 +14,8 @@ namespace MatrixCode
     public partial class Form1 : Form
     {
         public int[,] bornMatrix = new int[3, 7];
+        public string rlMistake = "";
+        public string rlBmatrix = "";
         public Form1()
         {
             InitializeComponent();
@@ -23,13 +25,17 @@ namespace MatrixCode
         {
             int word = 0;
             textAnswer.Text = "";
-            if (!radioCodeIn.Checked && !radioCodeOut.Checked) {
+            if (!radioCodeIn.Checked && !radioCodeOut.Checked)
+            {
                 MessageBox.Show("Функция не выбрана!");
                 return;
             }
-            try {
+            try
+            {
                 word = Int32.Parse(TextMessage.Text);
-            } catch (FormatException) {
+            }
+            catch (FormatException)
+            {
                 MessageBox.Show("Неверно введено сообщение!");
                 return;
             }
@@ -54,13 +60,22 @@ namespace MatrixCode
                 bornMatrix[2, 3] = Int32.Parse(matrixText34.Text);
                 bornMatrix[2, 4] = Int32.Parse(matrixText35.Text);
                 bornMatrix[2, 5] = Int32.Parse(matrixText36.Text);
-                
-            } catch (FormatException) {
+
+            }
+            catch (FormatException)
+            {
                 MessageBox.Show("Неверно введена матрица!");
                 return;
             }
             if (radioCodeIn.Checked)
-            {//Закодировать сообщение
+            {
+                richTextBox1.Text = "";
+                if (TextMessage.Text.Length != 3)
+                {
+                    MessageBox.Show("Неверно введено сообщение!");
+                    return;
+                }
+                labelMistakeNumber.Visible = false;
                 int[] wordArray = MatrixWorkerClass.wordToArray(word, 3);
                 int[] answer = MatrixWorkerClass.codeInto(ref bornMatrix, wordArray);
                 for (int i = 0; i < answer.Length; ++i)
@@ -73,6 +88,12 @@ namespace MatrixCode
             {
                 if (radioCodeOut.Checked)
                 {
+                    richTextBox1.Text = "";
+                    if (TextMessage.Text.Length != 6) {
+                        MessageBox.Show("Неверно введено сообщение!");
+                        return;
+                    }
+                    labelMistakeNumber.Visible = true;
                     string[] bmatrix = new string[8];
                     string sword = "";
                     int ssum = 0;
@@ -109,7 +130,7 @@ namespace MatrixCode
                     string lag = "";
                     for (int i = 0; i < Mistake.n.Length; ++i)
                     {
-                        textBox1.Text += Mistake.ns[i] + "  |  ";
+                        richTextBox1.Text += Mistake.ns[i] + "  |  ";
                         for (int j = 1; j < bmatrix.Length; ++j)
                         {
                             lag = bmatrix[j];
@@ -146,26 +167,47 @@ namespace MatrixCode
                                     }
                                 }
                             }
-                            textBox1.Text += lag + "  |  ";
+                            richTextBox1.Text += lag + "  |  ";
                             vs[i, j] = lag;
                         }
-                        textBox1.Text += "\r\n";
+                        richTextBox1.Text += "\r\n";
                     }
                     string tmp = "";
-                    for (int i = 0; i < vs.GetLength(0); ++i) {
+                    for (int i = 0; i < vs.GetLength(0); ++i)
+                    {
                         textAnswer.Text += "!";
-                        for (int j = 0; j < vs.GetLength(1); ++j) {
-                            if (TextMessage.Text == vs[i, j]) {
+                        for (int j = 0; j < vs.GetLength(1); ++j)
+                        {
+                            if (TextMessage.Text == vs[i, j])
+                            {
                                 tmp = bmatrix[j];
-                                labelMistakeNumber.Text = "Разряд с ошибкой - " + Convert.ToString(i-1);
+                                if (6 - i + 1 == 0)
+                                {
+                                    labelMistakeNumber.Text = "Разряд с ошибкой - 1 и 0";
+                                }
+                                else
+                                {
+                                    if (6 - i + 1 == 7)
+                                    {
+                                        labelMistakeNumber.Text = "Ошибки нет";
+                                    }
+                                    else
+                                    {
+                                        labelMistakeNumber.Text = "Разряд с ошибкой - " + Convert.ToString(6 - i + 1);
+                                    }
+                                }
+                                rlMistake = Mistake.ns[i];
+                                rlBmatrix = bmatrix[j];
                             }
                         }
                     }
                     for (int i = 0; i < bmatrix.Length; ++i)
                     {
-                        if (bmatrix[i] == tmp) {
+                        if (bmatrix[i] == tmp)
+                        {
                             string answer = "";
-                            while (i > 0) {
+                            while (i > 0)
+                            {
                                 answer += Convert.ToString(i % 2);
                                 i /= 2;
                             }
@@ -183,7 +225,7 @@ namespace MatrixCode
                     }
                     return;
                 }
-                
+
             }
 
         }
@@ -195,6 +237,9 @@ namespace MatrixCode
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
+            radioCodeIn.Checked = false;
+            radioCodeOut.Checked = false;
+            labelMistakeNumber.Visible = false;
             TextMessage.Text = "";
             textAnswer.Text = "";
             matrixText11.Text = "";
@@ -215,7 +260,62 @@ namespace MatrixCode
             matrixText34.Text = "";
             matrixText35.Text = "";
             matrixText36.Text = "";
-            textBox1.Text = "";
+            richTextBox1.Text = "";
+        }
+
+        private struct WordColor
+        {
+            public string word;
+            public System.Drawing.Color color;
+        }
+        private System.Collections.Generic.List<WordColor> wordColors = new System.Collections.Generic.List<WordColor>();
+        private void decodeButton_Click(object sender, EventArgs e)
+        {
+            if (richTextBox1.Text != "")
+            {
+                if (richTextBox1.Text.Contains(TextMessage.Text))
+                {
+                    int index = -1;
+                    int selectStart = richTextBox1.SelectionStart;
+
+                    while ((index = richTextBox1.Text.IndexOf(TextMessage.Text, (index + 1))) != -1)
+                    {
+                        richTextBox1.Select((index + 0), 6);
+                        richTextBox1.SelectionColor = Color.Red;
+                        richTextBox1.Select(selectStart, 0);
+                        richTextBox1.SelectionColor = Color.Black;
+                    }
+                }
+                if (richTextBox1.Text.Contains(rlMistake))
+                {
+                    int index = -1;
+                    int selectStart = richTextBox1.SelectionStart;
+
+                    while ((index = richTextBox1.Text.IndexOf(rlMistake, (index + 1))) != -1)
+                    {
+                        richTextBox1.Select((index + 0), 6);
+                        richTextBox1.SelectionColor = Color.Red;
+                        richTextBox1.Select(selectStart, 0);
+                        richTextBox1.SelectionColor = Color.Black;
+                    }
+                }
+                if (richTextBox1.Text.Contains(rlBmatrix))
+                {
+                    int index = -1;
+                    int selectStart = richTextBox1.SelectionStart;
+
+                    while ((index = richTextBox1.Text.IndexOf(rlBmatrix, (index + 1))) != -1)
+                    {
+                        richTextBox1.Select((index + 0), 6);
+                        richTextBox1.SelectionColor = Color.Red;
+                        richTextBox1.Select(selectStart, 0);
+                        richTextBox1.SelectionColor = Color.Black;
+                    }
+                }
+            }
+            else {
+                MessageBox.Show("Нет таблицы смежных классов");
+            }
         }
     }
 }

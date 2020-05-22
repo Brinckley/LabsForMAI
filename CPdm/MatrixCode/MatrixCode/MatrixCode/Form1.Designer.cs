@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.labelTable = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelMistakeNumber = new System.Windows.Forms.Label();
             this.textAnswer = new System.Windows.Forms.TextBox();
             this.labelAnswer = new System.Windows.Forms.Label();
@@ -56,6 +56,7 @@
             this.labelBornMatrix = new System.Windows.Forms.Label();
             this.labelMessInto = new System.Windows.Forms.Label();
             this.TextMessage = new System.Windows.Forms.TextBox();
+            this.decodeButton = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.button_Close = new System.Windows.Forms.Button();
             this.button_excecute = new System.Windows.Forms.Button();
@@ -76,8 +77,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.AllowDrop = true;
+            this.splitContainer1.Panel1.Controls.Add(this.richTextBox1);
             this.splitContainer1.Panel1.Controls.Add(this.labelTable);
-            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
             this.splitContainer1.Panel1.Controls.Add(this.labelMistakeNumber);
             this.splitContainer1.Panel1.Controls.Add(this.textAnswer);
             this.splitContainer1.Panel1.Controls.Add(this.labelAnswer);
@@ -107,15 +109,24 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.splitContainer1.Panel2.Controls.Add(this.decodeButton);
             this.splitContainer1.Panel2.Controls.Add(this.buttonClear);
             this.splitContainer1.Panel2.Controls.Add(this.button_Close);
             this.splitContainer1.Panel2.Controls.Add(this.button_excecute);
             this.splitContainer1.Panel2.Controls.Add(this.labelIntroRadio);
             this.splitContainer1.Panel2.Controls.Add(this.radioCodeOut);
             this.splitContainer1.Panel2.Controls.Add(this.radioCodeIn);
-            this.splitContainer1.Size = new System.Drawing.Size(836, 471);
-            this.splitContainer1.SplitterDistance = 568;
+            this.splitContainer1.Size = new System.Drawing.Size(988, 459);
+            this.splitContainer1.SplitterDistance = 671;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(12, 292);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(552, 155);
+            this.richTextBox1.TabIndex = 32;
+            this.richTextBox1.Text = "";
             // 
             // labelTable
             // 
@@ -126,14 +137,6 @@
             this.labelTable.Size = new System.Drawing.Size(263, 25);
             this.labelTable.TabIndex = 31;
             this.labelTable.Text = "Таблица смежных классов";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(16, 296);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(536, 150);
-            this.textBox1.TabIndex = 30;
             // 
             // labelMistakeNumber
             // 
@@ -147,7 +150,7 @@
             // 
             this.textAnswer.Location = new System.Drawing.Point(288, 58);
             this.textAnswer.Name = "textAnswer";
-            this.textAnswer.Size = new System.Drawing.Size(117, 22);
+            this.textAnswer.Size = new System.Drawing.Size(93, 22);
             this.textAnswer.TabIndex = 23;
             // 
             // labelAnswer
@@ -299,11 +302,11 @@
             // 
             this.labelBornMatrix.AutoSize = true;
             this.labelBornMatrix.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelBornMatrix.Location = new System.Drawing.Point(51, 142);
+            this.labelBornMatrix.Location = new System.Drawing.Point(51, 154);
             this.labelBornMatrix.Name = "labelBornMatrix";
-            this.labelBornMatrix.Size = new System.Drawing.Size(273, 24);
+            this.labelBornMatrix.Size = new System.Drawing.Size(274, 24);
             this.labelBornMatrix.TabIndex = 2;
-            this.labelBornMatrix.Text = "Ввод пораждающей матрицы";
+            this.labelBornMatrix.Text = "Ввод порождающей матрицы";
             // 
             // labelMessInto
             // 
@@ -321,11 +324,27 @@
             this.TextMessage.Size = new System.Drawing.Size(150, 22);
             this.TextMessage.TabIndex = 0;
             // 
+            // decodeButton
+            // 
+            this.decodeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.decodeButton.Location = new System.Drawing.Point(45, 280);
+            this.decodeButton.Name = "decodeButton";
+            this.decodeButton.Size = new System.Drawing.Size(236, 28);
+            this.decodeButton.TabIndex = 6;
+            this.decodeButton.Text = "Показать декодирование";
+            this.decodeButton.UseVisualStyleBackColor = true;
+            this.decodeButton.Click += new System.EventHandler(this.decodeButton_Click);
+            // 
             // buttonClear
             // 
+            this.buttonClear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClear.Location = new System.Drawing.Point(45, 246);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(161, 28);
+            this.buttonClear.Size = new System.Drawing.Size(236, 28);
             this.buttonClear.TabIndex = 5;
             this.buttonClear.Text = "Очистить все";
             this.buttonClear.UseVisualStyleBackColor = true;
@@ -333,9 +352,12 @@
             // 
             // button_Close
             // 
+            this.button_Close.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Close.Location = new System.Drawing.Point(45, 212);
             this.button_Close.Name = "button_Close";
-            this.button_Close.Size = new System.Drawing.Size(161, 28);
+            this.button_Close.Size = new System.Drawing.Size(236, 28);
             this.button_Close.TabIndex = 4;
             this.button_Close.Text = "Закрыть";
             this.button_Close.UseVisualStyleBackColor = true;
@@ -343,9 +365,12 @@
             // 
             // button_excecute
             // 
+            this.button_excecute.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.button_excecute.Location = new System.Drawing.Point(45, 178);
             this.button_excecute.Name = "button_excecute";
-            this.button_excecute.Size = new System.Drawing.Size(161, 28);
+            this.button_excecute.Size = new System.Drawing.Size(236, 28);
             this.button_excecute.TabIndex = 3;
             this.button_excecute.Text = "Операция";
             this.button_excecute.UseVisualStyleBackColor = true;
@@ -353,6 +378,9 @@
             // 
             // labelIntroRadio
             // 
+            this.labelIntroRadio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelIntroRadio.AutoSize = true;
             this.labelIntroRadio.Location = new System.Drawing.Point(1, 64);
             this.labelIntroRadio.Name = "labelIntroRadio";
@@ -362,6 +390,9 @@
             // 
             // radioCodeOut
             // 
+            this.radioCodeOut.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.radioCodeOut.AutoSize = true;
             this.radioCodeOut.Location = new System.Drawing.Point(4, 122);
             this.radioCodeOut.Name = "radioCodeOut";
@@ -373,6 +404,9 @@
             // 
             // radioCodeIn
             // 
+            this.radioCodeIn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.radioCodeIn.AutoSize = true;
             this.radioCodeIn.Location = new System.Drawing.Point(4, 94);
             this.radioCodeIn.Name = "radioCodeIn";
@@ -386,7 +420,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 471);
+            this.ClientSize = new System.Drawing.Size(988, 459);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
             this.Text = "MatrixCode";
@@ -434,8 +468,9 @@
         private System.Windows.Forms.Label labelMistakeNumber;
         private System.Windows.Forms.Button button_Close;
         private System.Windows.Forms.Button buttonClear;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label labelTable;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button decodeButton;
     }
 }
 
