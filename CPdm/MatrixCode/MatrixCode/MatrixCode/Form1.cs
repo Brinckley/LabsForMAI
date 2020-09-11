@@ -19,6 +19,33 @@ namespace MatrixCode
         public Form1()
         {
             InitializeComponent();
+            label1.Text = "";
+            label4.Text = "*\nПрограмма написана для частного случая:\nПорождающая матрица 3х6\nДлина сообщения для колирования - 3\nДлина сообщения для раскодирования - 6";
+            TextMessage.MaxLength = 6;
+            richTextBox1.ReadOnly = true;
+            textAnswer.ReadOnly = true;
+            ToolTip t = new ToolTip();
+            t.SetToolTip(TextMessage, "Сообщение для ввода");
+            TextMessage.Text = "help message";//подсказка
+            TextMessage.ForeColor = Color.Gray;
+            matrixText11.MaxLength = 1;
+            matrixText12.MaxLength = 1;
+            matrixText13.MaxLength = 1;
+            matrixText14.MaxLength = 1;
+            matrixText15.MaxLength = 1;
+            matrixText16.MaxLength = 1;
+            matrixText21.MaxLength = 1;
+            matrixText22.MaxLength = 1;
+            matrixText23.MaxLength = 1;
+            matrixText24.MaxLength = 1;
+            matrixText25.MaxLength = 1;
+            matrixText26.MaxLength = 1;
+            matrixText31.MaxLength = 1;
+            matrixText32.MaxLength = 1;
+            matrixText33.MaxLength = 1;
+            matrixText34.MaxLength = 1;
+            matrixText35.MaxLength = 1;
+            matrixText36.MaxLength = 1;
         }
 
         private void button_excecute_Click(object sender, EventArgs e)
@@ -237,6 +264,7 @@ namespace MatrixCode
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
+            label1.Text = "";
             radioCodeIn.Checked = false;
             radioCodeOut.Checked = false;
             labelMistakeNumber.Visible = false;
@@ -316,6 +344,32 @@ namespace MatrixCode
             else {
                 MessageBox.Show("Нет таблицы смежных классов");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Кодирование:\n В ячейку Ввод сообщения нужно ввести трехзначное число в двоичной системы счисления.\n В ячейки для порождающей матрицы нужно вводить по одному символу в ячейку.\n После ввода, выбрать функцию Кодировать сообщение и нажать на кнопку Операция.\n В поле Ответ будет выведено кодовое слово.\n\nДекодирование:\n В ячейку Ввод сообщения нужно ввести шестизначное число в двоичной системы счисления.\n В ячейки для порождающей матрицы нужно вводить по одному символу в ячейку.\n После ввода, выбрать функцию Декодировать сообщение и нажать на кнопку Операция.\n В поле Ответ будет показано раскодированное слово.\n В нижнем поле будет показана таблица смежных классов. Для демонстрации процесса декодирования нужно нажать кнопку Показать декодирование.");
+        }
+
+        private void TextMessage_Enter(object sender, EventArgs e)
+        {
+            TextMessage.Text = null;
+            TextMessage.ForeColor = Color.Black;
+        }
+
+        private void TextMessage_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioCodeIn_Click(object sender, EventArgs e)
+        {
+            label1.Text = "Для кодировния вводится сообщение из 3-х символов";   
+        }
+
+        private void radioCodeOut_Click(object sender, EventArgs e)
+        {
+            label1.Text = "Для декодировния вводится сообщение из 6-ти символов";
         }
     }
 }

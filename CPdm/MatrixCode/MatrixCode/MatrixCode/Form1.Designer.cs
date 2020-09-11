@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.labelTable = new System.Windows.Forms.Label();
             this.labelMistakeNumber = new System.Windows.Forms.Label();
@@ -56,6 +57,9 @@
             this.labelBornMatrix = new System.Windows.Forms.Label();
             this.labelMessInto = new System.Windows.Forms.Label();
             this.TextMessage = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.decodeButton = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.button_Close = new System.Windows.Forms.Button();
@@ -67,6 +71,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -78,6 +83,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.AllowDrop = true;
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.richTextBox1);
             this.splitContainer1.Panel1.Controls.Add(this.labelTable);
             this.splitContainer1.Panel1.Controls.Add(this.labelMistakeNumber);
@@ -109,6 +115,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.splitContainer1.Panel2.Controls.Add(this.label4);
+            this.splitContainer1.Panel2.Controls.Add(this.button1);
+            this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel2.Controls.Add(this.decodeButton);
             this.splitContainer1.Panel2.Controls.Add(this.buttonClear);
             this.splitContainer1.Panel2.Controls.Add(this.button_Close);
@@ -120,8 +129,19 @@
             this.splitContainer1.SplitterDistance = 671;
             this.splitContainer1.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(17, 122);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "label1";
+            // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.Color.Azure;
             this.richTextBox1.Location = new System.Drawing.Point(12, 292);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(552, 155);
@@ -148,6 +168,7 @@
             // 
             // textAnswer
             // 
+            this.textAnswer.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.textAnswer.Location = new System.Drawing.Point(288, 58);
             this.textAnswer.Name = "textAnswer";
             this.textAnswer.Size = new System.Drawing.Size(93, 22);
@@ -166,7 +187,7 @@
             // 
             this.labelBornMatrixG.AutoSize = true;
             this.labelBornMatrixG.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelBornMatrixG.Location = new System.Drawing.Point(6, 204);
+            this.labelBornMatrixG.Location = new System.Drawing.Point(278, 204);
             this.labelBornMatrixG.Name = "labelBornMatrixG";
             this.labelBornMatrixG.Size = new System.Drawing.Size(79, 36);
             this.labelBornMatrixG.TabIndex = 21;
@@ -174,126 +195,126 @@
             // 
             // matrixText36
             // 
-            this.matrixText36.Location = new System.Drawing.Point(228, 239);
+            this.matrixText36.Location = new System.Drawing.Point(502, 239);
             this.matrixText36.Name = "matrixText36";
             this.matrixText36.Size = new System.Drawing.Size(22, 22);
             this.matrixText36.TabIndex = 20;
             // 
             // matrixText26
             // 
-            this.matrixText26.Location = new System.Drawing.Point(228, 211);
+            this.matrixText26.Location = new System.Drawing.Point(502, 212);
             this.matrixText26.Name = "matrixText26";
             this.matrixText26.Size = new System.Drawing.Size(22, 22);
             this.matrixText26.TabIndex = 19;
             // 
             // matrixText16
             // 
-            this.matrixText16.Location = new System.Drawing.Point(228, 184);
+            this.matrixText16.Location = new System.Drawing.Point(502, 184);
             this.matrixText16.Name = "matrixText16";
             this.matrixText16.Size = new System.Drawing.Size(22, 22);
             this.matrixText16.TabIndex = 18;
             // 
             // matrixText35
             // 
-            this.matrixText35.Location = new System.Drawing.Point(201, 239);
+            this.matrixText35.Location = new System.Drawing.Point(475, 239);
             this.matrixText35.Name = "matrixText35";
-            this.matrixText35.Size = new System.Drawing.Size(21, 22);
+            this.matrixText35.Size = new System.Drawing.Size(22, 22);
             this.matrixText35.TabIndex = 17;
             // 
             // matrixText25
             // 
-            this.matrixText25.Location = new System.Drawing.Point(200, 212);
+            this.matrixText25.Location = new System.Drawing.Point(474, 212);
             this.matrixText25.Name = "matrixText25";
             this.matrixText25.Size = new System.Drawing.Size(22, 22);
             this.matrixText25.TabIndex = 16;
             // 
             // matrixText15
             // 
-            this.matrixText15.Location = new System.Drawing.Point(200, 184);
+            this.matrixText15.Location = new System.Drawing.Point(475, 184);
             this.matrixText15.Name = "matrixText15";
             this.matrixText15.Size = new System.Drawing.Size(22, 22);
             this.matrixText15.TabIndex = 15;
             // 
             // matrixText34
             // 
-            this.matrixText34.Location = new System.Drawing.Point(172, 239);
+            this.matrixText34.Location = new System.Drawing.Point(447, 239);
             this.matrixText34.Name = "matrixText34";
             this.matrixText34.Size = new System.Drawing.Size(22, 22);
             this.matrixText34.TabIndex = 14;
             // 
             // matrixText24
             // 
-            this.matrixText24.Location = new System.Drawing.Point(172, 212);
+            this.matrixText24.Location = new System.Drawing.Point(447, 212);
             this.matrixText24.Name = "matrixText24";
             this.matrixText24.Size = new System.Drawing.Size(22, 22);
             this.matrixText24.TabIndex = 13;
             // 
             // matrixText14
             // 
-            this.matrixText14.Location = new System.Drawing.Point(172, 184);
+            this.matrixText14.Location = new System.Drawing.Point(447, 184);
             this.matrixText14.Name = "matrixText14";
             this.matrixText14.Size = new System.Drawing.Size(22, 22);
             this.matrixText14.TabIndex = 12;
             // 
             // matrixText33
             // 
-            this.matrixText33.Location = new System.Drawing.Point(144, 239);
+            this.matrixText33.Location = new System.Drawing.Point(420, 239);
             this.matrixText33.Name = "matrixText33";
             this.matrixText33.Size = new System.Drawing.Size(22, 22);
             this.matrixText33.TabIndex = 11;
             // 
             // matrixText23
             // 
-            this.matrixText23.Location = new System.Drawing.Point(144, 212);
+            this.matrixText23.Location = new System.Drawing.Point(420, 212);
             this.matrixText23.Name = "matrixText23";
             this.matrixText23.Size = new System.Drawing.Size(22, 22);
             this.matrixText23.TabIndex = 10;
             // 
             // matrixText13
             // 
-            this.matrixText13.Location = new System.Drawing.Point(144, 184);
+            this.matrixText13.Location = new System.Drawing.Point(420, 184);
             this.matrixText13.Name = "matrixText13";
             this.matrixText13.Size = new System.Drawing.Size(22, 22);
             this.matrixText13.TabIndex = 9;
             // 
             // matrixText32
             // 
-            this.matrixText32.Location = new System.Drawing.Point(117, 239);
+            this.matrixText32.Location = new System.Drawing.Point(393, 239);
             this.matrixText32.Name = "matrixText32";
-            this.matrixText32.Size = new System.Drawing.Size(21, 22);
+            this.matrixText32.Size = new System.Drawing.Size(22, 22);
             this.matrixText32.TabIndex = 8;
             // 
             // matrixText22
             // 
-            this.matrixText22.Location = new System.Drawing.Point(117, 212);
+            this.matrixText22.Location = new System.Drawing.Point(393, 212);
             this.matrixText22.Name = "matrixText22";
-            this.matrixText22.Size = new System.Drawing.Size(21, 22);
+            this.matrixText22.Size = new System.Drawing.Size(22, 22);
             this.matrixText22.TabIndex = 7;
             // 
             // matrixText12
             // 
-            this.matrixText12.Location = new System.Drawing.Point(116, 184);
+            this.matrixText12.Location = new System.Drawing.Point(393, 184);
             this.matrixText12.Name = "matrixText12";
             this.matrixText12.Size = new System.Drawing.Size(22, 22);
             this.matrixText12.TabIndex = 6;
             // 
             // matrixText31
             // 
-            this.matrixText31.Location = new System.Drawing.Point(89, 239);
+            this.matrixText31.Location = new System.Drawing.Point(367, 239);
             this.matrixText31.Name = "matrixText31";
             this.matrixText31.Size = new System.Drawing.Size(22, 22);
             this.matrixText31.TabIndex = 5;
             // 
             // matrixText21
             // 
-            this.matrixText21.Location = new System.Drawing.Point(89, 212);
+            this.matrixText21.Location = new System.Drawing.Point(367, 212);
             this.matrixText21.Name = "matrixText21";
             this.matrixText21.Size = new System.Drawing.Size(22, 22);
             this.matrixText21.TabIndex = 4;
             // 
             // matrixText11
             // 
-            this.matrixText11.Location = new System.Drawing.Point(89, 184);
+            this.matrixText11.Location = new System.Drawing.Point(367, 184);
             this.matrixText11.Name = "matrixText11";
             this.matrixText11.Size = new System.Drawing.Size(22, 22);
             this.matrixText11.TabIndex = 3;
@@ -301,12 +322,13 @@
             // labelBornMatrix
             // 
             this.labelBornMatrix.AutoSize = true;
+            this.labelBornMatrix.BackColor = System.Drawing.SystemColors.Control;
             this.labelBornMatrix.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelBornMatrix.Location = new System.Drawing.Point(51, 154);
+            this.labelBornMatrix.Location = new System.Drawing.Point(290, 157);
             this.labelBornMatrix.Name = "labelBornMatrix";
-            this.labelBornMatrix.Size = new System.Drawing.Size(274, 24);
+            this.labelBornMatrix.Size = new System.Drawing.Size(306, 24);
             this.labelBornMatrix.TabIndex = 2;
-            this.labelBornMatrix.Text = "Ввод порождающей матрицы";
+            this.labelBornMatrix.Text = "Ввод порождающей матрицы 3*6";
             // 
             // labelMessInto
             // 
@@ -321,8 +343,39 @@
             // 
             this.TextMessage.Location = new System.Drawing.Point(13, 58);
             this.TextMessage.Name = "TextMessage";
-            this.TextMessage.Size = new System.Drawing.Size(150, 22);
+            this.TextMessage.Size = new System.Drawing.Size(98, 22);
             this.TextMessage.TabIndex = 0;
+            this.TextMessage.Enter += new System.EventHandler(this.TextMessage_Enter);
+            this.TextMessage.MouseEnter += new System.EventHandler(this.TextMessage_MouseEnter);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.label4.Location = new System.Drawing.Point(2, 351);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "label4";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(45, 314);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(236, 28);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Информация";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.pictureBox1.Location = new System.Drawing.Point(-5, 348);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(318, 111);
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
             // 
             // decodeButton
             // 
@@ -401,6 +454,7 @@
             this.radioCodeOut.TabStop = true;
             this.radioCodeOut.Text = "Декодировать сообщение";
             this.radioCodeOut.UseVisualStyleBackColor = true;
+            this.radioCodeOut.Click += new System.EventHandler(this.radioCodeOut_Click);
             // 
             // radioCodeIn
             // 
@@ -415,6 +469,7 @@
             this.radioCodeIn.TabStop = true;
             this.radioCodeIn.Text = "Кодировать сообщение";
             this.radioCodeIn.UseVisualStyleBackColor = true;
+            this.radioCodeIn.Click += new System.EventHandler(this.radioCodeIn_Click);
             // 
             // Form1
             // 
@@ -430,6 +485,7 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -471,6 +527,10 @@
         private System.Windows.Forms.Label labelTable;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button decodeButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
