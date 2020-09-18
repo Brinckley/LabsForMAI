@@ -13,9 +13,9 @@ namespace Lab1_2
         C objc;
         J objj;
 
-        public B b { get { return objb; } }
-        public C c { get { return objc; } }
-        public J j { get { return objj; } }
+        public B b { get { Console.Write("a->b"); return objb; } }
+        public C c { get { Console.Write("a->c"); return objc; } }
+        public J j { get { Console.Write("a->j"); return objj; } }
 
         public A(B objb, C objc, J objj)
         {
@@ -24,10 +24,7 @@ namespace Lab1_2
             this.objj = objj;
         }
 
-        public A() {
-            objb = new B();
-
-        }
+        public void general_A() { Console.Write("   Method of A\n"); }
 
         public void hashPrint() { Console.WriteLine("A object hash: " + this.GetHashCode()); }
 
@@ -40,7 +37,9 @@ namespace Lab1_2
         public B(D objd) { this.objd = objd; }
         public B() {}
 
-        public D d { get { return objd; } }
+        public D d { get { Console.Write("->d"); return objd; } }
+
+        public void general_B() { Console.Write("   Method of B\n"); }
 
         public void hashPrint() { Console.WriteLine("B object hash: " + this.GetHashCode()); }
     }
@@ -52,7 +51,9 @@ namespace Lab1_2
         public C(F objf) { this.objf = objf; }
         public C() { }
 
-        public F f { get { return objf; } }
+        public F f { get { Console.Write("->f"); return objf; } }
+
+        public void general_C() { Console.Write("   Method of C\n"); }
 
         public void hashPrint() { Console.WriteLine("C object hash: " + this.GetHashCode()); }
     }
@@ -64,6 +65,8 @@ namespace Lab1_2
 
         public D(int number) { this.number = number; }
 
+        public void general_D() { Console.Write("   Method of D\n"); }
+
         public void hashPrint() { Console.WriteLine("D object hash: " + this.GetHashCode()); }
     }
 
@@ -74,6 +77,8 @@ namespace Lab1_2
         public J() {}
         public J(int number) { this.number = number; }
 
+        public void general_J() { Console.Write("   Method of J\n"); }
+
         public void hashPrint() { Console.WriteLine("J object hash: " + this.GetHashCode()); }
     }
 
@@ -83,6 +88,8 @@ namespace Lab1_2
 
         public F() { }
         public F(int number) { this.number = number; }
+
+        public void general_F() { Console.WriteLine("   Method of F\n"); }
 
         public void hashPrint() { Console.WriteLine("F object hash: " + this.GetHashCode()); }
     }
@@ -98,27 +105,20 @@ namespace Lab1_2
             B b = new B(d);
             C c = new C(f);
             A a = new A(b, c, j);
-            
 
-            
-            b.hashPrint();
-            a.b.hashPrint();
+            a.general_A();
+            Console.WriteLine();
 
+            a.b.general_B();
             Console.WriteLine();
-            c.hashPrint();
-            a.c.hashPrint();
+            a.c.general_C();
+            Console.WriteLine();
+            a.j.general_J();
+            Console.WriteLine();
 
+            a.b.d.general_D();
             Console.WriteLine();
-            j.hashPrint();
-            a.j.hashPrint();
-            
-            Console.WriteLine();
-            d.hashPrint();
-            b.d.hashPrint();
-
-            Console.WriteLine();
-            f.hashPrint();
-            c.f.hashPrint();
+            a.c.f.general_F();
             Console.WriteLine();
 
 
