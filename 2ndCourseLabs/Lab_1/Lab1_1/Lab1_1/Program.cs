@@ -20,8 +20,14 @@ namespace Functions {
         }
 
         public static void writer(Func func) {
-            Console.WriteLine("In void function!");
+            Console.WriteLine("In static void function!");
             Console.WriteLine("String from the object: " + func.str);
+        }
+
+        public void strWriter()
+        {
+            Console.WriteLine("In void function!");
+            Console.WriteLine("String from the object: " + str);
         }
 
         public string strGetter() {
@@ -44,9 +50,9 @@ namespace Lab1_1
 
             Functions.Func.writer(func1);
             Console.WriteLine();
-            Functions.Func.writer(func2);
+            func2.strWriter();
             Console.WriteLine();
-            Functions.Func.writer(func3);
+            func3.strWriter();
             Console.WriteLine();
             Console.WriteLine("String value from the first object: " + func1.strGetter());
             Console.ReadKey();
