@@ -31,6 +31,18 @@ namespace Lab2_1
 
         public void print_A() { Console.WriteLine("   Method of A"); }
 
+        public void print_B() { Console.Write("a->b"); objb.print_B(); }
+
+        public void print_C() { Console.Write("a->c"); objc.print_C(); }
+
+        public void print_J() { Console.Write("a->j"); objj.print_J(); }
+
+        public void print_D() { Console.Write("a->b"); objb.print_D(); }
+
+        public void print_F() { Console.Write("a->c"); objc.print_F(); }
+
+        public void print_general() { print_A(); objb.print_general(); objc.print_general(); objj.print_J(); }
+
         public void hashPrint() { Console.WriteLine("A object hash: " + this.GetHashCode()); }
 
     }
@@ -46,6 +58,10 @@ namespace Lab2_1
 
         public void print_B() { Console.WriteLine("   Method of B"); }
 
+        public void print_D() { Console.Write("->d"); objd.print_D(); }
+
+        public void print_general() { print_B(); objd.print_D(); }
+
         public void hashPrint() { Console.WriteLine("B object hash: " + this.GetHashCode()); }
     }
 
@@ -59,6 +75,10 @@ namespace Lab2_1
         public F f { get { return objf; } }
 
         public void print_C() { Console.WriteLine("   Method of C"); }
+
+        public void print_F() { Console.Write("->f"); objf.print_F(); }
+
+        public void print_general() { print_C(); objf.print_F(); }
 
         public void hashPrint() { Console.WriteLine("C object hash: " + this.GetHashCode()); }
     }
@@ -112,23 +132,20 @@ namespace Lab2_1
         {
             A obj_a = new A();
             obj_a.print_A();
+            obj_a.print_B();
+            obj_a.print_C();
+            obj_a.print_J();
+            obj_a.print_F();
+            obj_a.print_D();
             Console.WriteLine();
 
-            J obj_j = obj_a.j;
-            obj_j.print_J();
+
+            obj_a.print_J();
+            obj_a.print_F();
+            obj_a.print_D();
             Console.WriteLine();
 
-            C obj_c = obj_a.c;
-            obj_c.print_C();
-            F obj_f = obj_c.f;
-            obj_f.print_F();
-            Console.WriteLine();
-
-            B obj_b = obj_a.b;
-            obj_b.print_B();
-            D obj_d = obj_b.d;
-            obj_d.print_D();
-            Console.WriteLine();
+            obj_a.print_general();
 
             Console.ReadKey();
         }
