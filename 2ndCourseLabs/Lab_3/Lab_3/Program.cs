@@ -18,12 +18,11 @@ namespace Lab_3
             Console.WriteLine("Number from D object: " + f_obj.getterNum());
             Console.WriteLine();
 
-            f_obj = new G();
+            f_obj = new G(45, 54);
             Console.WriteLine("Number from G object: " + f_obj.getterNum());
             Console.WriteLine();
-
-
-            f_obj = new D();
+            
+            Console.WriteLine("Field from superclass in the end: " + f_obj.f);
 
 
             Console.ReadKey();
