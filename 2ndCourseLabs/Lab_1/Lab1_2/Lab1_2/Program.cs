@@ -9,7 +9,7 @@ namespace Lab1_2
 
     class A
     {
-        B objb;
+        B objb = null;
         C objc;
         J objj;
 
@@ -35,7 +35,7 @@ namespace Lab1_2
         D objd;
 
         public B(D objd) { this.objd = objd; }
-        public B() { objd = new D(); }
+        public B() { }
 
         public D d { get { Console.Write("->d"); return objd; } }
 

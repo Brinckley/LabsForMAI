@@ -11,6 +11,8 @@ namespace Functions {
 
         string str;
 
+        public string s { get { return str; }  }
+
         public Func() {
             str = "Hi!";
         }
