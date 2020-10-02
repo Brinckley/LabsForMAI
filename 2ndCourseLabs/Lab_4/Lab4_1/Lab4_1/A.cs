@@ -120,6 +120,10 @@ namespace Lab4_1
             j_string = "222222";
         }
 
+        public void intro() {
+            Console.WriteLine("Constructor, Combination");
+        }
+
         public int numberReturner()
         {
             return j_field;
