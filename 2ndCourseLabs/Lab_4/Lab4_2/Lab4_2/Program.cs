@@ -28,11 +28,20 @@ namespace Lab4_2
         public abstract void writer_B();
     }
 
-    abstract class C : A
+    class C : A
     {
-        public abstract void writer();
+        int c_num;
 
-        public abstract void writer_C();
+        public int C_num { get { return c_num; } }
+
+        public C() {
+            c_num = 3;
+        }
+
+        public virtual void writer()
+        {
+            Console.WriteLine("Value of C: " + c_num);
+        }
     }
 
 
@@ -74,14 +83,9 @@ namespace Lab4_2
             this.f_field = f_field;
         }
 
-        public override void writer()
+        public new void writer()
         {
             Console.WriteLine("Value of this field: " + f_field);
-        }
-
-        public override void writer_C()
-        {
-            Console.WriteLine("We've come from C abstract class");
         }
     }
 
@@ -98,9 +102,11 @@ namespace Lab4_2
             d_obj.writer_B();
             Console.WriteLine();
 
+
+            C c_obj = new C();
+            c_obj.writer();
             F f_obj = new F();
             f_obj.writer();
-            f_obj.writer_C();
 
             Console.ReadKey();
         }

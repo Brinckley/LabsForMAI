@@ -91,7 +91,7 @@ namespace Lab4_1
             f_class_num = 22222;
         }
         
-        public override void writer() {
+        public new void writer() {
             Console.WriteLine("In F_class specification method.Values: " + f_class_num + ", " + b_class_num);
         }
     }
@@ -131,12 +131,12 @@ namespace Lab4_1
 
         public void printing1()
         {
-            Console.WriteLine("String and number = " + j_field + j_string);
+            Console.WriteLine("String and number = " + j_field + " " + j_string);
         }
 
         public void printing2()
         {
-            Console.WriteLine("String & number = " + j_field + j_string);
+            Console.WriteLine("String & number = " + j_field  + " " + j_string);
         }
 
         public string stringReturner()
