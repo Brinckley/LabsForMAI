@@ -33,6 +33,8 @@ namespace Lab7_1
 
             client.serverWriter(server);
             client.staticReturner();
+
+            Console.ReadKey();
         }
     }
 }
