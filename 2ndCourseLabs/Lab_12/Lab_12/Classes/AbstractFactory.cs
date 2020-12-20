@@ -6,38 +6,81 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Lab_12.Classes
-{
+{//Factory Pattern
     abstract class AbstractFactory
     {
-        public abstract void updateDate();
+        public abstract StatusInfo createDateStatus();
+        public abstract StatusInfo createTimeStatus();
     }
 
-    class dateData : AbstractFactory
+    class statusFactory : AbstractFactory
     {
-        protected string date;
-        protected string time;
 
-        protected dateData() { }
+        public override StatusInfo createDateStatus()
+        {
+            return new StatusStripDate();
+        }
 
-        public override void updateDate() {
-            date = DateTime.Now.ToLongDateString();
-            time = DateTime.Now.ToLongTimeString();
+        public override StatusInfo createTimeStatus()
+        {
+            return new StatusStripTime();
         }
     }
 
-    class ToolStripDate : dateData {
-        public ToolStripLabel dateLabel;
-        public ToolStripLabel timeLabel;
-        
-        public ToolStripDate() : base() {
-            dateLabel = new ToolStripLabel();
-            timeLabel = new ToolStripLabel();
+    abstract class StatusInfo { 
+        protected ToolStripLabel data;
+        public abstract ToolStripLabel getData();
+        public abstract void updateData();
+    }
+
+    class StatusStripDate : StatusInfo 
+    {
+        public override ToolStripLabel getData()
+        {
+            return data = new ToolStripLabel();
         }
 
-        public void updateToolStrip() {
-            updateDate();
-            dateLabel.Text = date;
-            timeLabel.Text = time;
+        public override void updateData()
+        {
+            data.Text = DateTime.Now.ToLongDateString();
         }
     }
+
+    class StatusStripTime : StatusInfo 
+    {
+        public override ToolStripLabel getData()
+        {
+            return data = new ToolStripLabel(); 
+        }
+
+        public override void updateData()
+        {
+            data.Text = DateTime.Now.ToLongTimeString();
+        }
+    }
+
+    class StatusLabelInfo {
+        private StatusInfo date;
+        private StatusInfo time;
+
+        public StatusLabelInfo(AbstractFactory abstractFactory) {
+            date = abstractFactory.createDateStatus();
+            time = abstractFactory.createTimeStatus();
+        }
+
+        public ToolStripLabel getDate() {
+            return date.getData();
+        }
+
+        public ToolStripLabel getTime() {
+            return time.getData();
+        }
+
+        public void updateDate()
+        {
+            date.updateData();
+            time.updateData();
+        }
+    }
+
 }

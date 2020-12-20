@@ -13,19 +13,20 @@ namespace Lab_12
 {
     public partial class Form1 : Form
     {
-        ToolStripDate dateTool;
+        StatusLabelInfo statusInfo;
         Timer timer;
         bool check;
 
         public Form1()
         {
             InitializeComponent();
-            dateTool = new ToolStripDate();
+            statusInfo = new StatusLabelInfo(new statusFactory());
+            
             timer = new Timer() { Interval = 1000 };
             timer.Tick += timer_Tick;
             timer.Start();
-            dateStatusStrip.Items.Add(dateTool.dateLabel);
-            dateStatusStrip.Items.Add(dateTool.timeLabel);
+            dateStatusStrip.Items.Add(statusInfo.getDate());
+            dateStatusStrip.Items.Add(statusInfo.getTime());
         }
 
         private void dialogButton_Click(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace Lab_12
 
         void timer_Tick(object sender, EventArgs e)
         {
-            dateTool.updateToolStrip();
+            statusInfo.updateDate();
         }
 
         private void messageButton_Click(object sender, EventArgs e)
