@@ -134,7 +134,7 @@
             this.Controls.Add(this.maleCheckBox);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Lab 12";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.dateStatusStrip.ResumeLayout(false);
             this.dateStatusStrip.PerformLayout();
