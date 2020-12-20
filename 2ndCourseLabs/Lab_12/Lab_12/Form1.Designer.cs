@@ -28,109 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnSize = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.menuStrip1.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.maleCheckBox = new System.Windows.Forms.CheckBox();
+            this.femaleCheckBox = new System.Windows.Forms.CheckBox();
+            this.dialogButton = new System.Windows.Forms.Button();
+            this.dateStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.messageButton = new System.Windows.Forms.Button();
+            this.buttonPictureDialog = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.dateStatusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // pictureBox1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(689, 28);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.pictureBox1.BackColor = System.Drawing.Color.Chartreuse;
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(418, 40);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(442, 345);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // fileToolStripMenuItem
+            // maleCheckBox
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.closeToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
-            this.fileToolStripMenuItem.Text = "File";
+            this.maleCheckBox.AutoSize = true;
+            this.maleCheckBox.Location = new System.Drawing.Point(74, 133);
+            this.maleCheckBox.Name = "maleCheckBox";
+            this.maleCheckBox.Size = new System.Drawing.Size(60, 21);
+            this.maleCheckBox.TabIndex = 1;
+            this.maleCheckBox.Text = "Male";
+            this.maleCheckBox.UseVisualStyleBackColor = true;
+            this.maleCheckBox.CheckedChanged += new System.EventHandler(this.maleCheckBox_CheckedChanged);
             // 
-            // closeToolStripMenuItem
+            // femaleCheckBox
             // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
-            this.closeToolStripMenuItem.Text = "Close";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            this.femaleCheckBox.AutoSize = true;
+            this.femaleCheckBox.Location = new System.Drawing.Point(214, 133);
+            this.femaleCheckBox.Name = "femaleCheckBox";
+            this.femaleCheckBox.Size = new System.Drawing.Size(76, 21);
+            this.femaleCheckBox.TabIndex = 2;
+            this.femaleCheckBox.Text = "Female";
+            this.femaleCheckBox.UseVisualStyleBackColor = true;
+            this.femaleCheckBox.CheckedChanged += new System.EventHandler(this.femaleCheckBox_CheckedChanged);
             // 
-            // treeView1
+            // dialogButton
             // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.treeView1.Location = new System.Drawing.Point(0, 28);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(187, 341);
-            this.treeView1.TabIndex = 1;
-            this.treeView1.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeExpand);
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.dialogButton.Location = new System.Drawing.Point(74, 184);
+            this.dialogButton.Name = "dialogButton";
+            this.dialogButton.Size = new System.Drawing.Size(216, 35);
+            this.dialogButton.TabIndex = 3;
+            this.dialogButton.Text = "Confirme your choice";
+            this.dialogButton.UseVisualStyleBackColor = true;
+            this.dialogButton.Click += new System.EventHandler(this.dialogButton_Click);
             // 
-            // richTextBox1
+            // dateStatusStrip
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(187, 128);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ShortcutsEnabled = false;
-            this.richTextBox1.Size = new System.Drawing.Size(502, 241);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.dateStatusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.dateStatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.dateStatusStrip.Location = new System.Drawing.Point(0, 399);
+            this.dateStatusStrip.Name = "dateStatusStrip";
+            this.dateStatusStrip.Size = new System.Drawing.Size(894, 25);
+            this.dateStatusStrip.TabIndex = 4;
+            this.dateStatusStrip.Text = "statusStrip1";
             // 
-            // listView1
+            // toolStripStatusLabel1
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnName,
-            this.columnSize,
-            this.columnDate});
-            this.listView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(187, 28);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(502, 100);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(41, 20);
+            this.toolStripStatusLabel1.Text = "Date";
             // 
-            // columnName
+            // messageButton
             // 
-            this.columnName.Text = "Name";
-            this.columnName.Width = 150;
+            this.messageButton.Location = new System.Drawing.Point(74, 247);
+            this.messageButton.Name = "messageButton";
+            this.messageButton.Size = new System.Drawing.Size(216, 35);
+            this.messageButton.TabIndex = 5;
+            this.messageButton.Text = "Show info";
+            this.messageButton.UseVisualStyleBackColor = true;
+            this.messageButton.Click += new System.EventHandler(this.messageButton_Click);
             // 
-            // columnSize
+            // buttonPictureDialog
             // 
-            this.columnSize.Text = "Size";
-            this.columnSize.Width = 150;
-            // 
-            // columnDate
-            // 
-            this.columnDate.Text = "Date modified";
-            this.columnDate.Width = 150;
+            this.buttonPictureDialog.Location = new System.Drawing.Point(554, 8);
+            this.buttonPictureDialog.Name = "buttonPictureDialog";
+            this.buttonPictureDialog.Size = new System.Drawing.Size(175, 26);
+            this.buttonPictureDialog.TabIndex = 6;
+            this.buttonPictureDialog.Text = "Select picture";
+            this.buttonPictureDialog.UseVisualStyleBackColor = true;
+            this.buttonPictureDialog.Click += new System.EventHandler(this.buttonPictureDialog_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 369);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.treeView1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.ClientSize = new System.Drawing.Size(894, 424);
+            this.Controls.Add(this.buttonPictureDialog);
+            this.Controls.Add(this.messageButton);
+            this.Controls.Add(this.dateStatusStrip);
+            this.Controls.Add(this.dialogButton);
+            this.Controls.Add(this.femaleCheckBox);
+            this.Controls.Add(this.maleCheckBox);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.dateStatusStrip.ResumeLayout(false);
+            this.dateStatusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,15 +144,14 @@
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnName;
-        private System.Windows.Forms.ColumnHeader columnSize;
-        private System.Windows.Forms.ColumnHeader columnDate;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox maleCheckBox;
+        private System.Windows.Forms.CheckBox femaleCheckBox;
+        private System.Windows.Forms.Button dialogButton;
+        private System.Windows.Forms.StatusStrip dateStatusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button messageButton;
+        private System.Windows.Forms.Button buttonPictureDialog;
     }
 }
 

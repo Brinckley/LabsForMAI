@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Lab_12.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,133 +13,97 @@ namespace Lab_12
 {
     public partial class Form1 : Form
     {
+        ToolStripDate dateTool;
+        Timer timer;
+        bool check;
+
         public Form1()
         {
             InitializeComponent();
-            DriveTreeInit();
+            dateTool = new ToolStripDate();
+            timer = new Timer() { Interval = 1000 };
+            timer.Tick += timer_Tick;
+            timer.Start();
+            dateStatusStrip.Items.Add(dateTool.dateLabel);
+            dateStatusStrip.Items.Add(dateTool.timeLabel);
         }
 
-        string fullPath;
-        private void DriveTreeInit()
+        private void dialogButton_Click(object sender, EventArgs e)
         {
-            string[] drivesArray = Directory.GetLogicalDrives();
-            treeView1.BeginUpdate();
-            treeView1.Nodes.Clear();
-
-            foreach (string s in drivesArray) {
-                TreeNode drive = new TreeNode(s, 0, 0);
-                treeView1.Nodes.Add(drive);
-                getDirs(drive);
-            }
-
-            treeView1.EndUpdate();
-        }
-
-        public void getDirs(TreeNode node)
-        {
-            DirectoryInfo[] diArray; 
-            node.Nodes.Clear(); 
-            string fullPath = node.FullPath;
-
-            // 
-            DirectoryInfo di = new DirectoryInfo(fullPath);
-
-            try
+            DialogResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            if (result == DialogResult.OK && check == true)
             {
-                diArray = di.GetDirectories();
+                maleCheckBox.Enabled = false;
+                femaleCheckBox.Enabled = false;
             }
-            catch { return; }
-
-            string str = "";
-            
-            foreach (DirectoryInfo dirinfo in diArray)
-            {
-                TreeNode dir = new TreeNode(dirinfo.Name, 0, 0);
-                node.Nodes.Add(dir);
-                str = richTextBox1.Text;
-                str += dirinfo.Name + "\n";
-                richTextBox1.Text = str;
+            else if (check == false) {
+                MessageBox.Show("Nothing was selected");
+            }
+            else if(result == DialogResult.None){
+                MessageBox.Show("Error!");
             }
         }
 
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        void timer_Tick(object sender, EventArgs e)
         {
-            this.Close();
+            dateTool.updateToolStrip();
         }
 
-        private void treeView1_BeforeExpand(object sender, TreeViewCancelEventArgs e)
+        private void messageButton_Click(object sender, EventArgs e)
         {
-            treeView1.BeginUpdate();
-
-            foreach (TreeNode node in e.Node.Nodes) {
-                getDirs(node);
-            }
-            treeView1.EndUpdate();
-        }
-
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            TreeNode currentNode = e.Node;
-            fullPath = currentNode.FullPath;
-
-            DirectoryInfo directoryInfo = new DirectoryInfo(fullPath);
-            FileInfo[] fileArray;
-            DirectoryInfo[] dirArray;
-
-            try
-            {
-                fileArray = directoryInfo.GetFiles();
-                dirArray = directoryInfo.GetDirectories();
-            }
-            catch { return; }
-
-            listView1.Items.Clear();
-
-            foreach(DirectoryInfo directory in dirArray) {
-                ListViewItem lvi = new ListViewItem(directoryInfo.Name);
-                lvi.SubItems.Add("0");
-                lvi.SubItems.Add(directoryInfo.LastWriteTime.ToString());
-
-                listView1.Items.Add(lvi);
-            }
-
-            foreach (FileInfo fileInfo in fileArray) {
-                ListViewItem lvi = new ListViewItem(fileInfo.Name);
-
-                lvi.SubItems.Add(fileInfo.Length.ToString());
-                lvi.SubItems.Add(fileInfo.LastWriteTime.ToString());
-                listView1.Items.Add(lvi);
-            }
-        }
-
-        private void ListView1_OnItemActivate(object sender, EventArgs e)
-        {
-
-            foreach (ListViewItem lvi in listView1.SelectedItems)
-            {
-                string ext = Path.GetExtension(lvi.Text).ToLower();
-                if (ext == ".txt" || ext == ".htm" || ext == ".htm1")
-                {
-                    try
-                    {
-                        richTextBox1.LoadFile(Path.Combine(fullPath, lvi.Text),
-                            RichTextBoxStreamType.PlainText);
-
-                    } catch { return; }
-
+            if (!maleCheckBox.Enabled) {
+                string res = "";
+                if (maleCheckBox.Checked) {
+                    res = "Male";
                 }
-                else if (ext == ".rtf")
-                {
-                    try
-                    {
-                        richTextBox1.LoadFile(Path.Combine(fullPath, lvi.Text),
-                            RichTextBoxStreamType.RichText);
-                    } catch { return; }
-                }
-
+                else { res = "female"; }
+                MessageBox.Show(res, "Information");
+                return;
             }
-
+            MessageBox.Show("No information yet!");
         }
 
+        private void maleCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (maleCheckBox.Checked == true) {
+                femaleCheckBox.Checked = false;
+                checkUpdate();
+            } 
+        }
+
+        private void femaleCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (femaleCheckBox.Checked == true)
+            {
+                maleCheckBox.Checked = false;
+                checkUpdate();
+            }
+        }
+
+        private void checkUpdate() {
+            if (maleCheckBox.Checked || femaleCheckBox.Checked)
+            {
+                check = true;
+                return;
+            }
+            check = false;
+        }
+
+        private void buttonPictureDialog_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
+            if (openFileDialog.ShowDialog() == DialogResult.OK) {
+                try {
+                    Bitmap image = new Bitmap(openFileDialog.FileName);
+                    this.pictureBox1.Size = image.Size;
+                    pictureBox1.Image = image;
+                    pictureBox1.Invalidate();
+                }
+                catch {
+                    DialogResult rezult = MessageBox.Show("Can't open this file(", "Error");
+                }
+            }
+        }
     }
 }
