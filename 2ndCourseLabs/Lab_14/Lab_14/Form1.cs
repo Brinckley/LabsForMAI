@@ -158,7 +158,7 @@ namespace Lab_14
                     e.Graphics.DrawString("Loading...", new Font("Arial", 14, FontStyle.Bold), Brushes.Aqua, paintPictureBox.Width / 3, paintPictureBox.Height / 3);
                     e.Graphics.TranslateTransform(paintPictureBox.Width / 2, paintPictureBox.Height / 2);
                     e.Graphics.RotateTransform(angle);
-                    e.Graphics.DrawRectangle(new Pen(Color.Red, 50), 15, 15, 30, 30);
+                    e.Graphics.DrawEllipse(new Pen(Color.Red, 50), 15, 15, 30, 30);
                 }
             }
 
