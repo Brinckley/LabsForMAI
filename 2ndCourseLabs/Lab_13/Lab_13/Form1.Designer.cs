@@ -31,19 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.PasteButton = new System.Windows.Forms.Button();
-            this.trackOpenButton = new System.Windows.Forms.Button();
             this.SaveStripButton = new System.Windows.Forms.ToolStripButton();
             this.ImportStripButton = new System.Windows.Forms.ToolStripButton();
             this.ClearToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.UpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.DownToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.BoldToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.ItalicToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.UnderlineToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.PasteButton = new System.Windows.Forms.Button();
+            this.trackOpenButton = new System.Windows.Forms.Button();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.FontToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,48 +72,14 @@
             this.toolStripSeparator2,
             this.BoldToolStripButton,
             this.ItalicToolStripButton,
-            this.UnderlineToolStripButton});
+            this.UnderlineToolStripButton,
+            this.toolStripSeparator3,
+            this.FontToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(617, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "Increase size";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(67, 24);
-            this.toolStripLabel1.Text = "Text Size";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // PasteButton
-            // 
-            this.PasteButton.Location = new System.Drawing.Point(12, 84);
-            this.PasteButton.Name = "PasteButton";
-            this.PasteButton.Size = new System.Drawing.Size(145, 54);
-            this.PasteButton.TabIndex = 2;
-            this.PasteButton.Text = "Paste";
-            this.PasteButton.UseVisualStyleBackColor = true;
-            this.PasteButton.Click += new System.EventHandler(this.PasteButton_Click);
-            // 
-            // trackOpenButton
-            // 
-            this.trackOpenButton.Location = new System.Drawing.Point(12, 159);
-            this.trackOpenButton.Name = "trackOpenButton";
-            this.trackOpenButton.Size = new System.Drawing.Size(145, 54);
-            this.trackOpenButton.TabIndex = 3;
-            this.trackOpenButton.Text = "Change text size";
-            this.trackOpenButton.UseVisualStyleBackColor = true;
-            this.trackOpenButton.Click += new System.EventHandler(this.trackOpenButton_Click);
             // 
             // SaveStripButton
             // 
@@ -143,6 +111,17 @@
             this.ClearToolStripButton.Text = "ClearStripButton";
             this.ClearToolStripButton.Click += new System.EventHandler(this.ClearToolStripButton_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(67, 24);
+            this.toolStripLabel1.Text = "Text Size";
+            // 
             // UpToolStripButton
             // 
             this.UpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -162,6 +141,11 @@
             this.DownToolStripButton.Size = new System.Drawing.Size(24, 24);
             this.DownToolStripButton.Text = "Decrease size";
             this.DownToolStripButton.Click += new System.EventHandler(this.DownToolStripButton_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // BoldToolStripButton
             // 
@@ -192,6 +176,41 @@
             this.UnderlineToolStripButton.Size = new System.Drawing.Size(24, 24);
             this.UnderlineToolStripButton.Text = "Underline";
             this.UnderlineToolStripButton.Click += new System.EventHandler(this.UnderlineToolStripButton_Click);
+            // 
+            // PasteButton
+            // 
+            this.PasteButton.Location = new System.Drawing.Point(12, 84);
+            this.PasteButton.Name = "PasteButton";
+            this.PasteButton.Size = new System.Drawing.Size(145, 54);
+            this.PasteButton.TabIndex = 2;
+            this.PasteButton.Text = "Paste";
+            this.PasteButton.UseVisualStyleBackColor = true;
+            this.PasteButton.Click += new System.EventHandler(this.PasteButton_Click);
+            // 
+            // trackOpenButton
+            // 
+            this.trackOpenButton.Location = new System.Drawing.Point(12, 159);
+            this.trackOpenButton.Name = "trackOpenButton";
+            this.trackOpenButton.Size = new System.Drawing.Size(145, 54);
+            this.trackOpenButton.TabIndex = 3;
+            this.trackOpenButton.Text = "Change text size";
+            this.trackOpenButton.UseVisualStyleBackColor = true;
+            this.trackOpenButton.Click += new System.EventHandler(this.trackOpenButton_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            // 
+            // FontToolStripButton
+            // 
+            this.FontToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.FontToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("FontToolStripButton.Image")));
+            this.FontToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.FontToolStripButton.Name = "FontToolStripButton";
+            this.FontToolStripButton.Size = new System.Drawing.Size(123, 24);
+            this.FontToolStripButton.Text = "toolStripButton1";
+            this.FontToolStripButton.Click += new System.EventHandler(this.FontToolStripButton_Click);
             // 
             // Form1
             // 
@@ -228,6 +247,8 @@
         private System.Windows.Forms.ToolStripButton ItalicToolStripButton;
         private System.Windows.Forms.ToolStripButton UnderlineToolStripButton;
         private System.Windows.Forms.Button trackOpenButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton FontToolStripButton;
     }
 }
 

@@ -29,7 +29,14 @@ namespace Lab_13
 
         private void CloseButton_Click(object sender, EventArgs e)
         {
+            Form1.timer.Stop();
             this.Close();
+        }
+
+        private void textSizeTrackBar_CursorChanged(object sender, EventArgs e)
+        {
+            ScrollLabel.Text = textSizeTrackBar.Value.ToString();
+            size = textSizeTrackBar.Value;
         }
     }
 }

@@ -44,6 +44,7 @@
             this.textSizeTrackBar.TabIndex = 0;
             this.textSizeTrackBar.Value = 8;
             this.textSizeTrackBar.Scroll += new System.EventHandler(this.textSizeTrackBar_Scroll);
+            this.textSizeTrackBar.CursorChanged += new System.EventHandler(this.textSizeTrackBar_CursorChanged);
             // 
             // ScrollLabel
             // 

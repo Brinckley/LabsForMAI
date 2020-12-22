@@ -18,6 +18,8 @@ namespace Lab_13
 
         Form2 trackForm;
 
+        public static Timer timer = new Timer();
+
         FontRTB font;
         TextChangeHandler boldChangeHandler;
         TextChangeHandler italicsChangeHandler;
@@ -42,6 +44,7 @@ namespace Lab_13
             font.tFont = new Font("Lato", 9, FontStyle.Regular);
             richTextBox1.ScrollBars = RichTextBoxScrollBars.Vertical;
             richTextBox1.Font = font.tFont;
+            FontToolStripButton.Text = "Font";
         }
 
         private void chainInit()
@@ -88,7 +91,7 @@ namespace Lab_13
             float size = richTextBox1.Font.Size;
             if (size > 7) {
                 size--;
-                font.tFont = new Font(font.tFont.FontFamily, size, font.tFont.Style);
+                font.tFont = new Font(font.tFont.FontFamily, size, richTextBox1.Font.Style);
                 updateRichTextBox();
             }
         }
@@ -139,7 +142,22 @@ namespace Lab_13
         {
             trackForm = new Form2();
             trackForm.ShowDialog();
+            timer = new Timer() { Interval = 10 };
+            timer.Tick += timer_Tick;
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
             richTextBox1.Font = new Font(richTextBox1.Font.FontFamily, Form2.size, richTextBox1.Font.Style);
+        }
+
+        private void FontToolStripButton_Click(object sender, EventArgs e)
+        {
+            FontDialog fontDialog = new FontDialog();
+            fontDialog.ShowDialog();
+            font.tFont = new Font(fontDialog.Font.FontFamily, fontDialog.Font.Size, fontDialog.Font.Style);
+            updateRichTextBox();
         }
     }
 }
