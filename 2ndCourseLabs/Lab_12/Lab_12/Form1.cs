@@ -36,12 +36,23 @@ namespace Lab_12
             {
                 maleCheckBox.Enabled = false;
                 femaleCheckBox.Enabled = false;
+                imageSet();
             }
             else if (check == false) {
                 MessageBox.Show("Nothing was selected");
             }
             else if(result == DialogResult.None){
                 MessageBox.Show("Error!");
+            }
+        }
+
+        private void imageSet()
+        {
+            if (maleCheckBox.Checked) {
+                pictureBox1.Load("D://Resources//male.jpg");
+            }
+            else {
+                pictureBox1.Load("D://Resources//female.jpg");
             }
         }
 
