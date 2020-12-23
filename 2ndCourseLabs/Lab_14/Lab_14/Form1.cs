@@ -27,7 +27,7 @@ namespace Lab_14
         int mouse_paint_y;
         int mouse_delta_x;
         int mouse_delta_y;
-
+        
         List<TwoPoints> listPoints;
         List<Pixel> listPointsPixel;
 
@@ -54,8 +54,6 @@ namespace Lab_14
             paintPictureBox.BorderStyle = BorderStyle.FixedSingle;
             listPoints = new List<TwoPoints>();
             listPointsPixel = new List<Pixel>();
-            buttonNext.Image = Properties.Resources.NextFrameArrow_16x;
-            buttonPrev.Image = Properties.Resources.PreviousFrame_16x;
             curveRandom = new Point[0];
             curveBezier = new Point[4];
             screenWorking = false;
@@ -153,6 +151,7 @@ namespace Lab_14
                 if (curveBezier.Length > 0) {
                     e.Graphics.DrawBeziers(penPaint, curveBezier);
                 }
+                
             } else {
                 if (paintPictureBox.BackColor == Color.White && loadingScreen == true) {
                     e.Graphics.DrawString("Loading...", new Font("Arial", 14, FontStyle.Bold), Brushes.Aqua, paintPictureBox.Width / 3, paintPictureBox.Height / 3);
@@ -161,7 +160,6 @@ namespace Lab_14
                     e.Graphics.DrawEllipse(new Pen(Color.Red, 50), 15, 15, 30, 30);
                 }
             }
-
         }
 
         private void lineToolStripMenuItem_Click(object sender, EventArgs e)
@@ -260,14 +258,10 @@ namespace Lab_14
             e.Effect = DragDropEffects.Copy;
         }
 
-        private void buttonPrev_Click(object sender, EventArgs e)
+        private void clipToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void buttonNext_Click(object sender, EventArgs e)
-        {
-            
+            ClipForm form = new ClipForm();
+            form.Show();
         }
     }
 }

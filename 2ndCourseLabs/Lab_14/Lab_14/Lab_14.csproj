@@ -47,8 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Command.cs" />
+    <Compile Include="Classes\ICommandActivity.cs" />
     <Compile Include="Classes\Pixel.cs" />
     <Compile Include="Classes\TwoPoints.cs" />
+    <Compile Include="ClipForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClipForm.Designer.cs">
+      <DependentUpon>ClipForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +64,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ClipForm.resx">
+      <DependentUpon>ClipForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

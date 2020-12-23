@@ -31,10 +31,8 @@
             this.paintPictureBox = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.brushToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pixelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,11 +40,8 @@
             this.DragDropButton = new System.Windows.Forms.Button();
             this.buttonOn = new System.Windows.Forms.Button();
             this.buttonOff = new System.Windows.Forms.Button();
-            this.buttonNext = new System.Windows.Forms.Button();
-            this.buttonPrev = new System.Windows.Forms.Button();
             this.buttonCurve = new System.Windows.Forms.Button();
             this.buttonBezier = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panelDragNDrop = new System.Windows.Forms.Panel();
             this.panelBig = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.paintPictureBox)).BeginInit();
@@ -83,38 +78,25 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveAsToolStripMenuItem,
-            this.importToolStripMenuItem,
             this.closeToolStripMenuItem,
-            this.undoToolStripMenuItem});
+            this.clipToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
-            this.saveAsToolStripMenuItem.Text = "Save as";
-            // 
-            // importToolStripMenuItem
-            // 
-            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
-            this.importToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
-            this.importToolStripMenuItem.Text = "Import";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(155, 24);
+            this.fileToolStripMenuItem.Text = "Additional functions";
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
             this.closeToolStripMenuItem.Text = "Close";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
-            // undoToolStripMenuItem
+            // clipToolStripMenuItem
             // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
-            this.undoToolStripMenuItem.Text = "Undo";
+            this.clipToolStripMenuItem.Name = "clipToolStripMenuItem";
+            this.clipToolStripMenuItem.Size = new System.Drawing.Size(120, 26);
+            this.clipToolStripMenuItem.Text = "Clip";
+            this.clipToolStripMenuItem.Click += new System.EventHandler(this.clipToolStripMenuItem_Click);
             // 
             // brushToolStripMenuItem
             // 
@@ -143,7 +125,7 @@
             // 
             // colorButton
             // 
-            this.colorButton.Location = new System.Drawing.Point(35, 69);
+            this.colorButton.Location = new System.Drawing.Point(35, 92);
             this.colorButton.Name = "colorButton";
             this.colorButton.Size = new System.Drawing.Size(168, 41);
             this.colorButton.TabIndex = 2;
@@ -181,24 +163,6 @@
             this.buttonOff.UseVisualStyleBackColor = true;
             this.buttonOff.Click += new System.EventHandler(this.buttonOff_Click);
             // 
-            // buttonNext
-            // 
-            this.buttonNext.Location = new System.Drawing.Point(431, 345);
-            this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(53, 36);
-            this.buttonNext.TabIndex = 6;
-            this.buttonNext.UseVisualStyleBackColor = true;
-            this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
-            // 
-            // buttonPrev
-            // 
-            this.buttonPrev.Location = new System.Drawing.Point(366, 345);
-            this.buttonPrev.Name = "buttonPrev";
-            this.buttonPrev.Size = new System.Drawing.Size(53, 36);
-            this.buttonPrev.TabIndex = 7;
-            this.buttonPrev.UseVisualStyleBackColor = true;
-            this.buttonPrev.Click += new System.EventHandler(this.buttonPrev_Click);
-            // 
             // buttonCurve
             // 
             this.buttonCurve.Location = new System.Drawing.Point(35, 139);
@@ -211,21 +175,13 @@
             // 
             // buttonBezier
             // 
-            this.buttonBezier.Location = new System.Drawing.Point(35, 207);
+            this.buttonBezier.Location = new System.Drawing.Point(35, 186);
             this.buttonBezier.Name = "buttonBezier";
             this.buttonBezier.Size = new System.Drawing.Size(168, 41);
             this.buttonBezier.TabIndex = 9;
             this.buttonBezier.Text = "Bezier curve";
             this.buttonBezier.UseVisualStyleBackColor = true;
             this.buttonBezier.Click += new System.EventHandler(this.buttonBezier_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(210, 217);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(36, 24);
-            this.comboBox1.TabIndex = 10;
             // 
             // panelDragNDrop
             // 
@@ -252,11 +208,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 393);
             this.Controls.Add(this.panelBig);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonBezier);
             this.Controls.Add(this.buttonCurve);
-            this.Controls.Add(this.buttonPrev);
-            this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonOff);
             this.Controls.Add(this.buttonOn);
             this.Controls.Add(this.colorButton);
@@ -280,24 +233,19 @@
         private System.Windows.Forms.PictureBox paintPictureBox;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.Button colorButton;
         private System.Windows.Forms.Button DragDropButton;
         private System.Windows.Forms.ToolStripMenuItem brushToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pixelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
         private System.Windows.Forms.Button buttonOn;
         private System.Windows.Forms.Button buttonOff;
-        private System.Windows.Forms.Button buttonNext;
-        private System.Windows.Forms.Button buttonPrev;
         private System.Windows.Forms.Button buttonCurve;
         private System.Windows.Forms.Button buttonBezier;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panelDragNDrop;
         private System.Windows.Forms.Panel panelBig;
+        private System.Windows.Forms.ToolStripMenuItem clipToolStripMenuItem;
     }
 }
 
