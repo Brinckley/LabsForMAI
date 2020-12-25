@@ -44,6 +44,8 @@ namespace Lab_14.Classes
     {
         ICommand command;
 
+        public Switcher() { }
+
         public Switcher(ICommand command) { this.command = command; }
 
         public void buttonOn() {

@@ -16,7 +16,7 @@ namespace Lab_14
     public partial class Lab_14 : Form
     {
         public static bool screenWorking;
-
+        
         bool lineChoice;
         bool pixelChoice;
 
@@ -43,6 +43,9 @@ namespace Lab_14
         float angle;
         int deep = 0;
 
+        Switcher switcher;
+        ScreenSwitcher screenSwitcher;
+
         public Lab_14()
         {
             InitializeComponent();
@@ -62,6 +65,11 @@ namespace Lab_14
             panelDragNDrop.AllowDrop = true;
             deep = 0;
             history = new List<types>();
+
+            screenSwitcher = new ScreenSwitcher(); //command realisation
+            switcher = new Switcher(new ScreenCommand(screenSwitcher));
+
+
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -196,7 +204,7 @@ namespace Lab_14
                 paintPictureBox.Invalidate();
             } else {
                 timerLoading.Stop();
-                screenWorking = true;
+                switcher.buttonOn();
                 loadingScreen = false;
 
                 paintPictureBox.Invalidate();
@@ -205,9 +213,9 @@ namespace Lab_14
 
         private void buttonOff_Click(object sender, EventArgs e)
         {
-            paintPictureBox.Image = null;
             paintPictureBox.BackColor = Color.Black;
-            screenWorking = false;
+            switcher.buttonOff();
+            paintPictureBox.Invalidate();
         }
 
         private void buttonCurve_Click(object sender, EventArgs e)
