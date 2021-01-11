@@ -44,13 +44,14 @@
             this.UnderlineToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.FontToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.PasteButton = new System.Windows.Forms.Button();
-            this.dateStatusStrip = new System.Windows.Forms.StatusStrip();
-            this.buttonCopy = new System.Windows.Forms.Button();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.findToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.FIndButtonToolStrip = new System.Windows.Forms.ToolStripButton();
+            this.PasteButton = new System.Windows.Forms.Button();
+            this.dateStatusStrip = new System.Windows.Forms.StatusStrip();
+            this.buttonCopy = new System.Windows.Forms.Button();
+            this.buttonGraph = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,6 +193,33 @@
             this.FontToolStripButton.Text = "toolStripButton1";
             this.FontToolStripButton.Click += new System.EventHandler(this.FontToolStripButton_Click);
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(37, 24);
+            this.toolStripLabel2.Text = "Find";
+            // 
+            // findToolStripTextBox
+            // 
+            this.findToolStripTextBox.Name = "findToolStripTextBox";
+            this.findToolStripTextBox.Size = new System.Drawing.Size(100, 27);
+            this.findToolStripTextBox.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
+            // 
+            // FIndButtonToolStrip
+            // 
+            this.FIndButtonToolStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.FIndButtonToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("FIndButtonToolStrip.Image")));
+            this.FIndButtonToolStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.FIndButtonToolStrip.Name = "FIndButtonToolStrip";
+            this.FIndButtonToolStrip.Size = new System.Drawing.Size(24, 24);
+            this.FIndButtonToolStrip.Text = "Find";
+            this.FIndButtonToolStrip.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // PasteButton
             // 
             this.PasteButton.Location = new System.Drawing.Point(558, 332);
@@ -222,32 +250,15 @@
             this.buttonCopy.UseVisualStyleBackColor = true;
             this.buttonCopy.Click += new System.EventHandler(this.buttonCopy_Click);
             // 
-            // toolStripSeparator4
+            // buttonGraph
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(37, 24);
-            this.toolStripLabel2.Text = "Find";
-            // 
-            // findToolStripTextBox
-            // 
-            this.findToolStripTextBox.Name = "findToolStripTextBox";
-            this.findToolStripTextBox.Size = new System.Drawing.Size(100, 27);
-            this.findToolStripTextBox.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
-            // 
-            // FIndButtonToolStrip
-            // 
-            this.FIndButtonToolStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.FIndButtonToolStrip.Image = ((System.Drawing.Image)(resources.GetObject("FIndButtonToolStrip.Image")));
-            this.FIndButtonToolStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.FIndButtonToolStrip.Name = "FIndButtonToolStrip";
-            this.FIndButtonToolStrip.Size = new System.Drawing.Size(24, 24);
-            this.FIndButtonToolStrip.Text = "toolStripButton1";
-            this.FIndButtonToolStrip.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.buttonGraph.Location = new System.Drawing.Point(12, 332);
+            this.buttonGraph.Name = "buttonGraph";
+            this.buttonGraph.Size = new System.Drawing.Size(101, 39);
+            this.buttonGraph.TabIndex = 6;
+            this.buttonGraph.Text = "Open tree";
+            this.buttonGraph.UseVisualStyleBackColor = true;
+            this.buttonGraph.Click += new System.EventHandler(this.buttonGraph_Click);
             // 
             // Form1
             // 
@@ -255,6 +266,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(647, 399);
+            this.Controls.Add(this.buttonGraph);
             this.Controls.Add(this.buttonCopy);
             this.Controls.Add(this.dateStatusStrip);
             this.Controls.Add(this.PasteButton);
@@ -293,6 +305,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripTextBox findToolStripTextBox;
         private System.Windows.Forms.ToolStripButton FIndButtonToolStrip;
+        private System.Windows.Forms.Button buttonGraph;
     }
 }
 

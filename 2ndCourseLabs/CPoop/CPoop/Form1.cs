@@ -16,7 +16,9 @@ namespace CPoop
     {
         SaveFileDialog saveFileDialog;
         OpenFileDialog openFileDialog;
-        
+
+        TreeStorageSingleton treeStorage;
+
         public static Timer timerStatus = new Timer();
         StatusLabelInfo statusInfo;
         int currentRunner;
@@ -42,7 +44,7 @@ namespace CPoop
             FontToolStripButton.Text = "Font";
             currentRunner = 0;
             statusInfo = new StatusLabelInfo(new statusFactory());
-
+            TreeStorageSingleton treeStorage = TreeStorageSingleton.getInstance();
             timerStatus = new Timer() { Interval = 1000 };
             timerStatus.Tick += timerStatus_Tick;
             timerStatus.Start();
@@ -200,6 +202,15 @@ namespace CPoop
             ItalicToolStripButton.Image = Properties.Resources.Italic_16xMD;
             UnderlineToolStripButton.Image = Properties.Resources.Underline_16xMD;
             FIndButtonToolStrip.Image = Properties.Resources.FindNext_16x;
+        }
+
+        private void buttonGraph_Click(object sender, EventArgs e)
+        {
+            treeStorage = TreeStorageSingleton.getInstance();
+            treeStorage.setTree(richTextBox1.Text);
+            //MessageBox.Show(treeStorage.arrayText.Length.ToString());
+            GraphSeeker graphSeeker = new GraphSeeker();
+            graphSeeker.ShowDialog();
         }
     }
 }
